@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap');
+
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: Mulish, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+.vf8-container {
+    font-family: Mulish, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+.vf8-technical-specs h1 {
+    display: flex;
+    color: #b73030;
+    /* justify-content: center; */
+    margin-bottom: 40px;
+    font-size: 3.5em;
+}
+
+.vf8-technical-specs {
+    margin-bottom: 40px;
+    padding: 55px;
+    background-image: url('../assets/VF8-page.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    color: b73030;
+    /* Màu trắng cho toàn bộ chữ */
+    height: 655px;
+    /* Thiết lập chiều cao của `div` bằng chiều cao của ảnh */
+}
+
+.vf8-technical-specs ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 35%;
+    margin-left: 0;
+}
+
+.vf8-technical-specs li {
+    margin-bottom: 35px;
+    width: 80%;
+    /* Chiếm 45% chiều rộng để có khoảng cách giữa các mục */
+}
+
+.vf8-technical-specs strong {
+    display: block;
+    color: #ffffff;
+    /* Màu trắng cho toàn bộ chữ */
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    /* Khoảng cách dưới tiêu đề */
+}
+
+.vf8-technical-specs span {
+    display: block;
+    color: #ffffff;
+    /* Màu trắng cho toàn bộ chữ */
+    font-size: 1.9em;
+    /* Cỡ chữ lớn hơn */
+}
+
+.vf8-description {
+    /* text-align: center; */
+    font-size: 1.1em;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf8-description p {
+    padding: 20px;
+    width: 80%;
+    font-size: 1.4em;
+}
+
+.vf8-description-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+}
+
+.vf8-description h1 {
+    display: flex;
+    color: #b73030;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.vf8-video {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf8-video h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #b73030;
+}
+
+.vf8-video p {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    font-size: 1.4em;
+}
+
+.vf8-video video {
+    display: flex;
+    width: 80%;
+}
+
+/* Media Query cho cửa sổ nhỏ hơn 50% chiều rộng */
+@media (max-width: 50vw) {
+    .vf8-technical-specs ul {
+        flex-direction: column;
+        align-items: center;
+        /* Căn giữa các mục */
+        width: 100%;
+        /* Chiếm 100% chiều rộng khi thu nhỏ */
+    }
+
+    .vf8-technical-specs li {
+        width: 100%;
+        /* Mỗi mục chiếm 100% chiều rộng */
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .vf8-technical-specs li strong,
+    .vf8-technical-specs li span {
+        color: #ffffff !important;
+        /* Màu trắng cho tiêu đề và thông tin khi thu nhỏ */
+    }
+}
+
+.vf8-detailed-info {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.vf8-detailed-info-image {
+    width: 100%;
+}
+
+.vf8-detailed-info p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.4em;
+}
+
+.vf8-info-main {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+}
+
+.vf8-info-side {
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Các quy tắc CSS hiện tại... */
+
+.vf8-safety {
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf8-safety h2 {
+    font-size: 2.2em;
+    color: #b73030;
+}
+
+.vf8-safety p {
+    width: 80%;
+    font-size: 1.5em;
+}
+
+.vf8-image-text {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+}
+
+.vf8-image-text-item {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    border-radius: 0px;
+    flex-direction: column;
+}
+
+.vf8-image-text-item h3 {
+    width: 100%;
+    display: flex;
+
+}
+
+.vf8-image-text-item p {
+    width: 100%;
+    display: flex;
+    text-align: left;
+}
+
+.vf8-image-text-item img {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.vf8-image-text-item p {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+
+
+.vf8-interior-images {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf8-interior-images img {
+    display: flex;
+    width: 80%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.vf8-interior-images h2 {
+    margin-bottom: 20px;
+    font-size: 2.4em;
+    color: #b73030;
+}
+
+.vf8-interior-images p {
+    width: 80%;
+    font-size: 1.4em;
+}
+
+@media (max-width: 768px) {
+    .vf8-container {
+        width: 95%;
+    }
+
+    .vf8-technical-specs {
+        height: auto;
+    }
+
+    .vf8-technical-specs strong,
+    .vf8-detailed-info p {
+        display: block;
+        width: auto;
+    }
+
+    .vf8-interior-images img {
+        width: 100%;
+        max-width: 100%;
+    }
+}

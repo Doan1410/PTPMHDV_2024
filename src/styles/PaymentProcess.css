@@ -1,0 +1,57 @@
+.payment-process {
+    padding: 2rem;
+    background-color: #f0f0f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.payment-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.payment-content h2 {
+    color: #008cff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.payment-details,
+.payment-qr {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.payment-details p,
+.payment-qr p {
+    margin: 0.5rem 0;
+}
+
+.payment-note {
+    font-size: 1rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin-top: 1rem;
+}
+
+.car-image {
+    width: 300px;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

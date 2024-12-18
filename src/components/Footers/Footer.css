@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Mulish, sans-serif;
+}
+
+.footer {
+  background-color: #222; /* Màu nền giống menu */
+  padding: 0px;
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+  flex-wrap: nowrap;
+}
+
+/* Logo */
+.footer-logo {
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+
+.footer-logo p {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+.footer-logo a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+  text-decoration: none;
+}
+
+.footer-logo img {
+  display: flex;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.footer-section-1 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.footer-section {
+  display: flex;
+  width: 16%;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.footer-logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0071ce; /* Màu chữ khi di chuột qua */
+}
+
+.footer-detail-title {
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+  display: inline;
+}
+
+.footer-detail-info {
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+  display: inline;
+}
+
+.social-media {
+  display: flex;
+  margin-top: 10px;
+}
+
+.social-media a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #0071ce; /* Màu chữ khi di chuột qua */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222; /* Màu nền giống menu */
+  color: rgba(255, 255, 255, 0.896); /* Màu chữ giống menu */
+}

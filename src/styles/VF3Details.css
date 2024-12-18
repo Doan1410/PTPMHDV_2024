@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap');
+
+body {
+  /* font-family: Arial, sans-serif; */
+  font-family: Mulish, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+ 
+.vf3-container {
+  font-family: Mulish, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+
+.vf3-technical-specs h1 {
+  display: flex;
+  color: #0782ce;
+  justify-content: center;
+  margin-bottom: 40px;
+  font-size: 3.0em;
+
+}
+
+.vf3-technical-specs {
+  margin-bottom: 40px;
+  padding: 35px;
+  background-image: url('../assets/VF3-page-2.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  color: white;
+  /* Màu trắng cho toàn bộ chữ */
+  height: 655px;
+  /* Thiết lập chiều cao của `div` bằng chiều cao của ảnh */
+}
+
+.vf3-technical-specs ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 40%;
+  margin-left: 0;
+}
+
+.vf3-technical-specs li {
+  margin-bottom: 35px;
+  width: 45%;
+  /* Chiếm 45% chiều rộng để có khoảng cách giữa các mục */
+}
+
+.vf3-technical-specs strong {
+  display: block;
+  color: #0782ce;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.vf3-technical-specs span {
+  display: block;
+  color: #0782ce;
+  font-size: 1.8em;
+  /* Cỡ chữ lớn hơn */
+}
+
+.vf3-description {
+  /* text-align: center; */
+  font-size: 1.1em;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vf3-description p {
+  padding: 20px;
+  width: 80%;
+}
+
+.vf3-description-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+}
+
+
+.vf3-description h1 {
+  display: flex;
+  color: #0782ce;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.vf3-video {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vf3-video h1 {
+  display: flex;
+  color: #0782ce;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.vf3-video p {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+
+}
+
+.vf3-video video {
+  display: flex;
+  width: 80%;
+}
+
+/* Media Query cho cửa sổ nhỏ hơn 50% chiều rộng */
+@media (max-width: 50vw) {
+  .vf3-technical-specs ul {
+    flex-direction: column;
+    align-items: center;
+    /* Căn giữa các mục */
+    width: 100%;
+    /* Chiếm 100% chiều rộng khi thu nhỏ */
+  }
+
+  .vf3-technical-specs li {
+    width: 100%;
+    /* Mỗi mục chiếm 100% chiều rộng */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .vf3-technical-specs li strong,
+  .vf3-technical-specs li span {
+    color: #ffffff !important;
+    /* Màu trắng cho tiêu đề và thông tin khi thu nhỏ */
+  }
+}
+
+.vf3-detailed-info {
+  margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.vf3-detailed-info-image {
+  width: 100%;
+}
+
+.vf3-detailed-info p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.vf3-info-main {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+}
+
+.vf3-info-side {
+  display: flex;
+  width: 45%;
+  align-items: center;
+  justify-content: center;
+}
+
+.vf3-interior-images {
+  margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vf3-interior-images img {
+  display: flex;
+  width: 80%;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.vf3-interior-images h2 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .vf3-container {
+    width: 95%;
+  }
+
+  .vf3-technical-specs {
+    height: auto;
+  }
+
+  .vf3-technical-specs strong,
+  .vf3-detailed-info p {
+    display: block;
+    width: auto;
+  }
+
+  .vf3-interior-images img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

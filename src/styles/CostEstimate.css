@@ -1,0 +1,196 @@
+/* CostEstimate.css */
+#title {
+    font-size: 60px;
+    /* Tăng kích thước chữ */
+    text-align: center;
+    /* Căn giữa */
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-container {
+    width: 60%;
+    flex-direction: column; /* Đảm bảo hình ảnh và thông tin xe được căn chỉnh theo cột */
+    align-items: center;
+    position: relative;
+}
+
+.image-container img {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển đổi mượt mà */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Phóng to ảnh khi hover */
+}
+
+.car-info {
+    width: auto; /* Đảm bảo ô thông tin xe chiếm toàn bộ chiều rộng của container */
+    align-items: center;
+    text-align: center;
+    background-color: rgba(114, 241, 255, 0.268);
+    padding: 10px; /* Thêm padding để ô thông tin xe đẹp hơn */
+    box-sizing: border-box; /* Đảm bảo kích thước bao gồm cả padding và border */
+}
+
+.form-container {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    /* Đảm bảo các form group chiếm toàn bộ chiều rộng của container */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 2px;
+    /* Đảm bảo căn lề với các phần chọn */
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-group select:invalid {
+    color: gray;
+}
+
+.price-info {
+    width: 100%;
+    /* Đảm bảo phần giá chiếm toàn bộ chiều rộng của container */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.price-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Chỉnh phần placeholder option cho màu xám */
+option[value=""][disabled] {
+    display: none;
+}
+
+option[hidden] {
+    color: gray;
+}
+
+/* Định dạng cho phần "Chi phí lăn bánh dự kiến" */
+.total-cost {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.total-cost p {
+    margin: 0;
+}
+
+.total-cost-amount {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Định dạng nhóm nút bấm */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Hiệu ứng hover cho các nút bấm */
+.order-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà */
+}
+
+.order-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Phóng to nút khi hover */
+}
+
+/* Định dạng cho nút bấm "Xem chi tiết" */
+.details-button {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà */
+}
+
+.details-button:hover {
+    background-color: #5a6268;
+    transform: scale(1.1); /* Phóng to nút khi hover */
+}
+
+/* Hiệu ứng cho các đoạn văn bản trong CostEstimate */
+.cost-estimate p {
+    transition: color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu sắc và phóng to nhẹ */
+}
+
+.cost-estimate p:hover {
+    color: #007bff; /* Đổi màu chữ khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ chữ khi hover */
+}
+
+/* Hiệu ứng cho tiêu đề trong CostEstimate */
+.cost-estimate h2, .cost-estimate h3 {
+    transition: color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu sắc và phóng to nhẹ */
+}
+
+.cost-estimate h2:hover, .cost-estimate h3:hover {
+    color: #007bff; /* Đổi màu chữ khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ chữ khi hover */
+}
+/* Hiệu ứng cho tiêu đề */
+h2, h3 {
+    transition: color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu sắc và phóng to nhẹ */
+}
+
+h2:hover, h3:hover {
+    color: #007bff; /* Đổi màu chữ khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ chữ khi hover */
+}
+
+/* Hiệu ứng cho các ô thông tin */
+.car-info, .price-info, .total-cost {
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà */
+}
+
+.car-info:hover, .price-info:hover, .total-cost:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng khi hover */
+    transform: translateY(-5px); /* Di chuyển lên khi hover */
+}

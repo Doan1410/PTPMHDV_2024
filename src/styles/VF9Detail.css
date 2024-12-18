@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Mulish:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: Mulish, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+.vf9-container {
+    font-family: Mulish, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+.vf9-technical-specs h1 {
+    display: flex;
+    color: #ffffff;
+    justify-content: center;
+    margin-bottom: 0px;
+
+    font-size: 3.5em;
+    font-weight: normal;
+    font-family: Old Standard TT,Mulish,Source Sans Pro,serif;
+}
+
+.vf9-technical-specs h2 {
+    display: flex;
+    color: #ffffff;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+    font-size: 4.5em;
+    padding-left: 530px;
+    font-weight: normal;
+    font-family: Old Standard TT,Mulish,Source Sans Pro,serif;
+}
+
+.vf9-technical-specs {
+    margin-bottom: 0px;
+    padding: 55px;
+    background-image: url('../assets/VF9-page.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    color: b73030;
+    /* Màu trắng cho toàn bộ chữ */
+    height: 655px;
+    /* Thiết lập chiều cao của `div` bằng chiều cao của ảnh */
+}
+
+.vf9-technical-specs ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 35%;
+    margin-left: 0;
+}
+
+.vf9-technical-specs li {
+    margin-bottom: 35px;
+    width: 80%;
+    /* Chiếm 45% chiều rộng để có khoảng cách giữa các mục */
+}
+
+.vf9-technical-specs strong {
+    display: block;
+    color: #ffffff;
+    /* Màu trắng cho toàn bộ chữ */
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    /* Khoảng cách dưới tiêu đề */
+}
+
+.vf9-technical-specs span {
+    display: block;
+    color: #ffffff;
+    /* Màu trắng cho toàn bộ chữ */
+    font-size: 1.9em;
+    /* Cỡ chữ lớn hơn */
+}
+
+.vf9-description {
+    /* text-align: center; */
+    font-size: 1.1em;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf9-description p {
+    padding: 20px;
+    width: 80%;
+    font-size: 1.4em;
+}
+
+.vf9-description-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+}
+
+.vf9-description h1 {
+    display: flex;
+    color: #000000;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.vf9-video {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf9-video h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    margin-top: 30px;
+    color: #000000;
+    font-family: Old Standard TT,Mulish,Source Sans Pro,serif;
+}
+
+.vf9-video p {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.vf9-video video {
+    display: flex;
+    width: 80%;
+}
+
+/* Media Query cho cửa sổ nhỏ hơn 50% chiều rộng */
+@media (max-width: 50vw) {
+    .vf9-technical-specs ul {
+        flex-direction: column;
+        align-items: center;
+        /* Căn giữa các mục */
+        width: 100%;
+        /* Chiếm 100% chiều rộng khi thu nhỏ */
+    }
+
+    .vf9-technical-specs li {
+        width: 100%;
+        /* Mỗi mục chiếm 100% chiều rộng */
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .vf9-technical-specs li strong,
+    .vf9-technical-specs li span {
+        color: #ffffff !important;
+        /* Màu trắng cho tiêu đề và thông tin khi thu nhỏ */
+    }
+}
+
+.vf9-detailed-info {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.vf9-detailed-info-image {
+    width: 100%;
+}
+
+.vf9-detailed-info p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.4em;
+}
+
+.vf9-info-main {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+}
+
+.vf9-info-side {
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Các quy tắc CSS hiện tại... */
+
+.vf9-safety {
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf9-safety h2 {
+    font-size: 2.2em;
+    color: #000000;
+}
+
+.vf9-safety p {
+    width: 80%;
+    font-size: 1.5em;
+}
+
+.vf9-image-text {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.vf9-image-text-item {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    border-radius: 0px;
+    flex-direction: column;
+}
+
+.vf9-image-text-item h3 {
+    width: 100%;
+    display: flex;
+}
+
+.vf9-image-text-item p {
+    width: 100%;
+    display: flex;
+    text-align: left;
+}
+
+.vf9-image-text-item img {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.vf9-image-text-item p {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.vf9-interior-images {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vf9-interior-images img {
+    display: flex;
+    width: 80%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.vf9-interior-images h2 {
+    margin-bottom: 20px;
+    font-size: 2.4em;
+    color: #000000;
+}
+
+.vf9-interior-images p {
+    width: 80%;
+    font-size: 1.4em;
+}
+
+@media (max-width: 768px) {
+    .vf9-container {
+        width: 95%;
+    }
+
+    .vf9-technical-specs {
+        height: auto;
+    }
+
+    .vf9-technical-specs strong,
+    .vf9-detailed-info p {
+        display: block;
+        width: auto;
+    }
+
+    .vf9-interior-images img {
+        width: 100%;
+        max-width: 100%;
+    }
+}

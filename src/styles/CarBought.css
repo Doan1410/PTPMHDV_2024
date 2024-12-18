@@ -1,0 +1,303 @@
+.car-bought {
+    padding: 2rem;
+    background-color: #f0f0f5; /* Màu nền dịu nhẹ */
+    color: #333;
+    font-family: Arial, sans-serif;
+    border-radius: 10px; /* Bo tròn các góc của container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng để tạo độ sâu */
+    animation: fadeIn 1s ease-in-out; /* Thêm hiệu ứng fade-in */
+}
+
+/* Định nghĩa hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.car-bought h2 {
+    text-align: center;
+    color: #008cff;
+    font-size: 2.5rem;
+    /* Larger font size for header */
+}
+
+.content-container {
+    display: flex;
+}
+
+.car-details {
+    flex: 2;
+    margin-right: 2rem;
+}
+
+.car-image {
+    text-align: center;
+}
+
+.car-image img {
+    max-width: 925px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+    
+.car-info {
+    text-align: center;
+    font-size: 1.4rem;
+    /* Larger font size for car info */
+    margin-top: 1rem;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-info h3 {
+    font-size: 1.8rem;
+    /* Larger font size for subheading */
+    margin-bottom: 1rem;
+    color: #008cff;
+}
+
+.car-info p {
+    margin-bottom: 1rem;
+}
+
+.car-info .note {
+    font-size: 1rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+.selection-section {
+    flex: 1;
+    padding-left: 2rem;
+    border-left: 2px solid #ccc;
+}
+
+.selection-section h3 {
+    font-size: 1.5rem;
+}
+
+.selection-section p,
+.selection-section label {
+    font-size: 1.2rem;
+    color: #555;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 190%;
+    margin: 0.5rem 0;
+}
+
+  .radio-group {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+.radio-label {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.radio-label:hover {
+    background-color: #f0f0f0;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000000;
+    margin-right: 10px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.radio-label input[type="radio"]:checked+.radio-custom::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.battery-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.battery-info p {
+    margin: 0.5rem 0;
+}
+
+.battery-info strong {
+    color: #d9534f;
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.vat-note {
+    font-size: 0.8rem !important;
+    /* Chữ nhỏ hơn với !important */
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.progress-step {
+    width: 33%;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.progress-step.active {
+    background-color: #008cff;
+    color: #fff;
+}
+
+.progress-step.completed::after {
+    content: "✓";
+    margin-left: 8px;
+    color: rgb(2, 255, 2);
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.next-button,
+.confirm-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng cho box-shadow */
+}
+
+.next-button:hover,
+.confirm-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng khi hover */
+}
+
+.next-button:disabled,
+.confirm-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.car-owner-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-owner-info label {
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+    display: flex !important;
+    justify-content: space-between !important; /* Căn đều hai bên trái phải */
+    align-items: center !important; /* Căn giữa theo chiều dọc */
+}
+
+.car-owner-info label span {
+    flex: 1 !important; /* Chiếm toàn bộ không gian còn lại */
+}
+
+.car-owner-info input,
+.car-owner-info select {
+    padding: 0.5rem !important;
+    font-size: 1rem !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    width: 300px !important; /* Đặt cùng kích thước để thẳng hàng mép phải */
+}
+
+.car-owner-info .radio-group {
+    display: flex !important;
+    gap: 1rem !important; /* Khoảng cách giữa các radio button */
+}
+
+.radio-label {
+    display: flex !important;
+    align-items: center !important;
+    border: 1px solid #000 !important;
+    padding: 10px !important;
+    width: auto !important; /* Đặt auto để không giới hạn chiều rộng */
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.radio-label:hover {
+    background-color: #f0f0f0 !important;
+}
+
+.radio-label input[type="radio"] {
+    display: none !important;
+}
+
+.radio-custom {
+    width: 20px !important;
+    height: 20px !important;
+    border: 1px solid #000 !important;
+    margin-right: 10px !important;
+    border-radius: 50% !important;
+    position: relative !important;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+    content: "" !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: #000 !important;
+    position: absolute !important;
+    top: 4px !important;
+    left: 4px !important;
+}
+
+.error-message {
+    color: red !important;
+    font-size: 0.9rem !important;
+    margin-top: 0.5rem !important;
+}

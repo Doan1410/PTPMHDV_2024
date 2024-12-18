@@ -1,0 +1,129 @@
+/* Định dạng nút điều hướng */
+.slider-2 .slick-prev,
+.slider-2 .slick-next {
+  display: flex !important;
+  background-color: transparent !important; /* Nền màu trắng */
+  color: rgb(255, 255, 255) !important; /* Màu mũi tên đen */
+  border: none !important;
+  width: 50px !important; /* Chiều rộng nút điều hướng */
+  height: 50px !important; /* Chiều cao nút điều hướng */
+  cursor: pointer !important;
+  position: absolute !important;
+  top: 50% !important;
+  z-index: 1 !important;
+  transform: translateY(-50%) !important;
+  transition: all 0.3s ease !important;
+  border-radius: 50% !important; /* Hình tròn */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important; /* Đổ bóng nhẹ */
+  align-items: center !important; /* Căn giữa theo chiều dọc */
+  justify-content: center !important; /* Căn giữa theo chiều ngang */
+  font-size: 25px !important; /* Kích thước mũi tên */
+  font-weight: bold !important; /* Đảm bảo mũi tên hiển thị đậm */
+  text-align: center !important; /* Căn giữa mũi tên */
+}
+
+/* Xóa nội dung mặc định của ::before */
+.slider-2 .slick-prev::before,
+.slider-2 .slick-next::before {
+  content: '' !important;
+}
+
+.slider-2 .slick-prev {
+  left: 10px !important;
+}
+
+.slider-2 .slick-next {
+  right: 10px !important;
+}
+
+.slider-2 {
+  width: 100% !important;
+  height: 80vh !important;
+  overflow: hidden !important;
+  position: relative !important;
+  margin-bottom: 50px !important;
+  background-image: url('../../assets/Background-slider2.png') !important; /* Đảm bảo ảnh che phủ toàn bộ nền */
+  background-size: contain !important;
+  background-position: center !important;
+  background-attachment: local !important;
+}
+
+.slider-2 background-image {
+  width: 100%;
+}
+
+.slider-2 .slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.slider-2 .slide-content {
+  display: flex !important; /* Đảm bảo slide-content hiển thị flex */
+  width: 100% !important;
+  justify-content: center !important; /* Căn giữa các phần tử */
+  align-items: center !important; /* Đảm bảo các phần tử bên trong căn giữa theo chiều dọc */
+  flex-direction: row !important; /* Sắp xếp các phần tử bên trong theo chiều dọc */
+  justify-content: space-evenly !important;
+}
+
+/* Định dạng cho hình ảnh */
+.slider-2 img {
+  top: 10% !important;
+  margin-top: 100px !important; /* Thêm khoảng cách lùi xuống 10px */
+  width: 50% !important; /* Ảnh chiếm 50% chiều rộng của slide */
+  height: auto !important; /* Chiều cao tự động */
+  object-fit: cover !important; /* Đảm bảo hình ảnh được căn chỉnh đúng */
+  margin: auto !important; /* Căn giữa hình ảnh trong div */
+}
+
+/* Định dạng cho phần thông tin xe */
+.slider-car-info {
+  width: 50% !important; /* Phần thông tin chiếm 50% chiều rộng của slide */
+  height: auto !important; /* Chiều cao tự động */
+  padding: 20px !important;
+  padding-right: 120px !important;
+  color: rgb(236, 232, 232) !important; /* Đặt màu chữ là màu đen */
+  text-align: left !important; /* Đặt chữ về bên trái */
+  background-color: transparent !important; /* Làm nền chữ trong suốt để dễ đọc */
+  display: flex !important; /* Đảm bảo phần thông tin xe hiển thị flex */
+  flex-direction: column !important; /* Sắp xếp các phần tử bên trong theo chiều dọc */
+  justify-content: center !important; /* Đảm bảo các phần tử bên trong được căn chỉnh theo chiều dọc */
+  font-size: 1.8em;
+}
+
+.slider-car-info p {
+padding: 10px 0px !important;
+}
+
+/* Đảm bảo phần tiêu đề nằm ngang với hình ảnh */
+.car-info h2 {
+  margin: 0 0 30px 0 !important;
+  align-self: flex-start !important; /* Căn chỉnh tiêu đề về bên trái */
+}
+
+.car-info p {
+  margin: 10px !important;
+}
+
+/* Định dạng cho nhóm nút */
+.button-group {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 10px !important;
+}
+
+/* Định dạng cho các nút */
+.details-button, .buy-button {
+  padding: 10px 20px !important;
+  margin: 5px !important;
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+.details-button:hover, .buy-button:hover {
+  background-color: #0056b3 !important;
+}

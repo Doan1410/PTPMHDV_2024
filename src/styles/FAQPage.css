@@ -1,0 +1,120 @@
+.faq-content-wrapper {
+  background-color: #f5f5f5 !important; /* Màu nền nhẹ nhàng cho toàn bộ trang web */
+}
+
+
+.faq-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.faq-menu {
+  width: 200px;
+  margin-right: 20px;
+  position: sticky;
+  top: 10%; /* Khoảng cách từ đỉnh trang */
+  height: calc(100vh - 40px); /* Chiều cao của menu */
+  overflow-y: auto; /* Thêm thanh cuộn dọc nếu nội dung vượt quá chiều cao */
+  background-color: #f5f5f5; /* Đảm bảo menu có nền trắng để không bị che khuất */
+}
+
+.faq-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.faq-menu li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.faq-menu li:hover {
+  background-color: #ddd;
+}
+
+.faq-content {
+  flex: 1;
+}
+
+.faq-content h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.faq-section {
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f9f9f9; /* Màu nền cho câu hỏi */
+  padding: 10px; /* Khoảng cách bên trong câu hỏi */
+  border-radius: 5px; /* Bo góc cho câu hỏi */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+.faq-question:hover {
+  background-color: #e0e0e0; /* Màu nền khi di chuột qua câu hỏi */
+}
+
+.faq-content h2 {
+  color: #333;
+  margin: 0;
+  font-size: 2.2em;
+  padding-bottom: 20px;
+}
+
+.faq-question h3 {
+  color: #333;
+  margin: 0;
+}
+
+.faq-toggle {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.faq-answer {
+  color: #666;
+  line-height: 1.6;
+  margin-top: 10px;
+  white-space: pre-line; /* Đảm bảo xuống dòng đúng */
+  padding: 10px; /* Khoảng cách bên trong câu trả lời */
+  background-color: #f9f9f9; /* Màu nền cho câu trả lời */
+  border-radius: 5px; /* Bo góc cho câu trả lời */
+}
+
+.faq-answer ul {
+  list-style-type: disc; /* Giữ lại dấu chấm đầu dòng */
+  padding-left: 20px; /* Lùi vào cho các phần tử con */
+}
+
+.faq-answer ul ul {
+  list-style-type: circle; /* Đổi màu dấu chấm đầu dòng cho các phần tử con */
+}
+
+.faq-answer ul ul ul {
+  list-style-type: square; /* Đổi màu dấu chấm đầu dòng cho các phần tử con */
+}
+
+.faq-answer strong {
+  display: inline; /* Hiển thị cùng dòng */
+  margin-left: 0; /* Không lùi vào */
+}

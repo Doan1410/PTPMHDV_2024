@@ -1,0 +1,305 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+}
+
+section {
+  padding: 2rem;
+  text-align: center;
+  padding-top: 80px;
+}
+section#home {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+section#home h1 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+section#home p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+section#home .welcome-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+section#home .welcome-item {
+  flex: 1 1 calc(50% - 2rem); /* Chiếm 50% chiều rộng trừ khoảng cách */
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section#home .welcome-item h3 {
+  color: #2fff00; /* Màu cam */
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+section#home .welcome-item p {
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+section#models {
+  padding: 4rem 2rem;
+}
+
+section#models h2 {
+  color: #333;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px #aaa;
+}
+
+section#models .car-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+section#models .car-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  width: calc(30% - 2rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  background-color: #E0F7FA;
+}
+
+section#models .car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #B2EBF2;
+}
+
+section#models .car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+section#models .car-card img:hover {
+  transform: scale(1.05);
+}
+
+section#models .car-card h3 {
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+section#models .car-card p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+section#models .car-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.order-button,
+.details-button {
+  font-weight: bold;
+  border: 2px solid;
+  background-color: transparent;
+  color: inherit;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  margin: 0 2.1rem;
+}
+
+.order-button {
+  border-color: #FF6347;
+  color: #FF6347;
+}
+
+.order-button:hover {
+  background-color: #FF6347;
+  color: white;
+  transform: scale(1.05);
+}
+
+.details-button {
+  border-color: #4682B4;
+  color: #4682B4;
+}
+
+.details-button:hover {
+  background-color: #4682B4;
+  color: white;
+  transform: scale(1.05);
+}
+
+section#consultation {
+  width: 96%;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  border: 2px solid rgb(68, 255, 0);
+}
+
+section#consultation h2 {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  color: rgb(68, 255, 0);
+  margin-bottom: 1rem;
+}
+
+section#consultation h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #00ff08ac;
+  margin-top: 0.5rem;
+}
+
+section#consultation .sub-heading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+section#consultation form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section#consultation label {
+  width: 90%;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.section-input {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+section#consultation button {
+  background-color: #00ff08;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  max-width: 200px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  margin: 1rem 0 0 0;
+}
+
+section#consultation button:hover {
+  background-color: #6fff77;
+  transform: scale(1.05);
+}
+
+section#consultation input:focus,
+section#consultation select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+section#consultation p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.radio-group-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 24%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  gap: 1rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center; /* Đảm bảo nội dung trong label căn giữa theo chiều dọc */
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%; /* Đảm bảo không bị tràn ra ngoài */
+}
+
+.radio-group label:hover {
+  background-color: #f4f4f4;
+  transform: translateY(-2px);
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 0.5rem;
+}
