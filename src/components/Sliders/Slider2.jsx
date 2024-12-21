@@ -15,7 +15,7 @@ const Slider2 = () => {
   const [carInfo, setCarInfo] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/cars')
+    fetch('http://localhost:8000/cars')
       .then(response => response.json())
       .then(data => {
         // Lọc và chỉ giữ lại các xe điện VinFast
@@ -77,6 +77,7 @@ const Slider2 = () => {
 
   return (
     <div className="slider-container slider-2">
+      <p>aaaaaaaaaa</p>
       <Slider {...settings}>
         {carInfo.map((car, index) => (
           <div className="slide-content" key={index}>

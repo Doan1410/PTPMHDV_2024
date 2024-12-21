@@ -11,7 +11,7 @@ const VFE34Details = () => {
     const [car, setCar] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/cars')
+        fetch('http://localhost:8000/cars')
             .then(response => response.json())
             .then(data => {
                 const vfe34Car = data.find(car => car.MaXe === 'VF e34');

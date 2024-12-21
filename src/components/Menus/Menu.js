@@ -11,16 +11,14 @@ import vf9 from "../../assets/vf-9.png";
 import vf34 from "../../assets/vf-e34.png";
 
 const carModels = [
-  { name: "VF3", image: vf3, details: "Compact car with modern design", link: "/car/vf3" },
-  { name: "VF e34", image: vf34, details: "Electric compact SUV for the future", link: "/car/vfe34" },
-  { name: "VF5 Plus", image: vf5, details: "Luxurious sedan with advanced features", link: "/car/vf5" },
-  { name: "VF6", image: vf6, details: "Premium SUV for every journey", link: "/car/vf6" },
-  { name: "VF7", image: vf7, details: "Stylish midsize SUV with smart technology", link: "/car/vf7" },
-  { name: "VF8", image: vf8, details: "High-performance SUV with a focus on comfort", link: "/car/vf8" },
-  { name: "VF9", image: vf9, details: "Luxury full-size SUV with spacious interior", link: "/car/vf9" },
+  { name: "VF 3", image: vf3, link: "/car/vf3" },
+  { name: "VF e34", image: vf34, link: "/car/vfe34" },
+  { name: "VF 5", image: vf5, link: "/car/vf5" },
+  { name: "VF 6", image: vf6, link: "/car/vf6" },
+  { name: "VF 7", image: vf7, link: "/car/vf7" },
+  { name: "VF 8", image: vf8, link: "/car/vf8" },
+  { name: "VF 9", image: vf9, link: "/car/vf9" },
 ];
-
-
 
 const menus = [
   { name: "Ô tô", submenu: carModels },
@@ -46,6 +44,7 @@ const Menu = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
   const [showToolsMenu, setShowToolsMenu] = useState(false);
+  const [carDetails, setCarDetails] = useState(null);
 
   const handleClickMenu = (index) => {
     if (activeMenu === index) {
@@ -57,14 +56,27 @@ const Menu = () => {
       }
     }
     setActiveItem(null);
+    setCarDetails(null);
   };
 
-  const handleMouseEnterItem = (index) => {
+  const handleMouseEnterItem = (index, carName) => {
     setActiveItem(index);
+    fetchCarDetails(carName);
   };
 
   const handleMouseLeaveItem = () => {
     setActiveItem(null);
+  };
+
+  const fetchCarDetails = async (carName) => {
+    try {
+      const response = await fetch('http://localhost:8000/cars');
+      const data = await response.json();
+      const car = data.find(car => car.MaXe === carName);
+      setCarDetails(car);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const toggleToolsMenu = () => {
@@ -99,15 +111,19 @@ const Menu = () => {
                     <li
                       key={subIndex}
                       className="dropdown-item"
-                      onMouseEnter={() => handleMouseEnterItem(subIndex)}
+                      onMouseEnter={() => handleMouseEnterItem(subIndex, item.name)}
                       onMouseLeave={handleMouseLeaveItem}
                     >
                       <Link to={item.link} className="dropdown-link">
                         {item.name}
-                        {activeItem === subIndex && (
+                        {activeItem === subIndex && carDetails && carDetails.MaXe === item.name && (
                           <div className="dropdown-details">
                             <img src={item.image} alt={item.name} />
-                            <p>{item.details}</p>
+                            <div className="car-details">
+                              <p><strong>Loại xe:</strong> {carDetails.KieuXe}</p>
+                              <p><strong>Công suất tối đa:</strong> {carDetails.CongSuatToiDa}</p>
+                              <p><strong>Quãng đường:</strong> {carDetails.TamDiChuyen} km</p>
+                            </div>
                           </div>
                         )}
                       </Link>

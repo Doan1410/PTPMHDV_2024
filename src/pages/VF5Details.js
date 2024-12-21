@@ -10,7 +10,7 @@ const VF5Details = () => {
 
     useEffect(() => {
         // Fetch dữ liệu từ JSON Server
-        fetch('http://localhost:3000/cars')
+        fetch('http://localhost:8000/cars')
             .then(response => response.json())
             .then(data => {
                 // Tìm xe có mã xe là 'VF 5'

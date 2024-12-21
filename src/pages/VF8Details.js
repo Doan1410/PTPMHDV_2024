@@ -13,7 +13,7 @@ const VF8Details = () => {
     const [car, setCar] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/cars')
+        fetch('http://localhost:8000/cars')
             .then(response => response.json())
             .then(data => {
                 const vf8Car = data.find(car => car.MaXe === 'VF 8');
