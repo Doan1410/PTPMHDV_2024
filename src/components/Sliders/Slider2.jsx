@@ -83,6 +83,7 @@ const Slider2 = () => {
             <img src={car.HinhAnh} alt={car.MaXe} />
             <div className="slider-car-info">
               <h2>{car.MaXe}</h2>
+              <p><strong>Dòng xe:</strong> {car.KieuXe} </p>
               <p><strong>Quãng đường:</strong> {car.TamDiChuyen} km</p>
               <p><strong>Số chỗ ngồi:</strong> {car.SoGhe}</p>
               <p><strong>Giá:</strong> {car.Gia.toLocaleString()} VND</p>
