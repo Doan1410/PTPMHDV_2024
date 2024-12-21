@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import vf3 from "../../assets/vf-3-2.png";
@@ -12,6 +12,40 @@ import "./Slider2.css";
 
 const Slider2 = () => {
   const navigate = useNavigate();
+  const [carInfo, setCarInfo] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/cars')
+      .then(response => response.json())
+      .then(data => {
+        // Lọc và chỉ giữ lại các xe điện VinFast
+        const electricCars = data.filter(car => ['VF 3', 'VF 5', 'VF 6', 'VF 7', 'VF 8', 'VF 9', 'VF e34'].includes(car.MaXe));
+        
+        // Map ảnh đã import vào dữ liệu xe
+        const carsWithImages = electricCars.map(car => {
+          switch(car.MaXe) {
+            case 'VF 3':
+              return { ...car, HinhAnh: vf3, detailsLink: '/car/vf3', buyLink: '/buy/vf3' };
+            case 'VF 5':
+              return { ...car, HinhAnh: vf5, detailsLink: '/car/vf5', buyLink: '/buy/vf5' };
+            case 'VF 6':
+              return { ...car, HinhAnh: vf6, detailsLink: '/car/vf6', buyLink: '/buy/vf6' };
+            case 'VF 7':
+              return { ...car, HinhAnh: vf7, detailsLink: '/car/vf7', buyLink: '/buy/vf7' };
+            case 'VF 8':
+              return { ...car, HinhAnh: vf8, detailsLink: '/car/vf8', buyLink: '/buy/vf8' };
+            case 'VF 9':
+              return { ...car, HinhAnh: vf9, detailsLink: '/car/vf9', buyLink: '/buy/vf9' };
+            case 'VF e34':
+              return { ...car, HinhAnh: vfe34, detailsLink: '/car/vfe34', buyLink: '/buy/vfe34' };
+            default:
+              return car;
+          }
+        });
+        setCarInfo(carsWithImages);
+      })
+      .catch(error => console.error('Error:', error));
+  }, []);
 
   const settings = {
     dots: true,
@@ -33,85 +67,12 @@ const Slider2 = () => {
     ),
   };
 
-  const carInfo = [
-    {
-      image: vf3,
-      model: "VinFast VF 3",
-      range: "200 km (ước tính)",
-      seats: "2 chỗ ngồi",
-      description: "Xe điện nhỏ gọn, công suất động cơ: 80 kW, dung lượng pin: 30 kWh",
-      detailsLink: "/car/vf3",
-      buyLink: "/buy/vf3",
-      car: { MaXe: "VF 3", HinhAnh: vf3, KieuXe: "Điện", Gia: 100000000 }, // Thêm thông tin xe
-    },
-    {
-      image: vf5,
-      model: "VinFast VF 5 Plus",
-      range: "300 km (NEDC)",
-      seats: "5 chỗ ngồi",
-      description: "SUV điện nhỏ gọn, công suất động cơ: 100 kW (134 hp), dung lượng pin: 37.23 kWh",
-      detailsLink: "/car/vf5",
-      buyLink: "/buy/vf5",
-      car: { MaXe: "VF 5", HinhAnh: vf5, KieuXe: "Điện", Gia: 200000000 }, // Thêm thông tin xe
-    },
-    {
-      image: vf6,
-      model: "VinFast VF 6",
-      range: "250 km (ước tính)",
-      seats: "5 chỗ ngồi",
-      description: "SUV điện cỡ nhỏ, công suất động cơ: 120 kW, dung lượng pin: 40 kWh",
-      detailsLink: "/car/vf6",
-      buyLink: "/buy/vf6",
-      car: { MaXe: "VF 6", HinhAnh: vf6, KieuXe: "Điện", Gia: 300000000 }, // Thêm thông tin xe
-    },
-    {
-      image: vfe34,
-      model: "VinFast VF e34",
-      range: "285 km (NEDC)",
-      seats: "5 chỗ ngồi",
-      description: "SUV điện nhỏ gọn, công suất động cơ: 110 kW (147 hp), dung lượng pin: 42 kWh",
-      detailsLink: "/car/vfe34",
-      buyLink: "/buy/vfe34",
-      car: { MaXe: "VF e34", HinhAnh: vfe34, KieuXe: "Điện", Gia: 400000000 }, // Thêm thông tin xe
-    },
-    {
-      image: vf7,
-      model: "VinFast VF 7",
-      range: "300 km (ước tính)",
-      seats: "5 chỗ ngồi",
-      description: "SUV điện cỡ nhỏ, công suất động cơ: 150 kW, dung lượng pin: 50 kWh",
-      detailsLink: "/car/vf7",
-      buyLink: "/buy/vf7",
-      car: { MaXe: "VF 7", HinhAnh: vf7, KieuXe: "Điện", Gia: 500000000 }, // Thêm thông tin xe
-    },
-    {
-      image: vf8,
-      model: "VinFast VF 8",
-      range: "400 km (WLTP)",
-      seats: "5 chỗ ngồi",
-      description: "SUV điện cỡ trung, công suất động cơ: 300 kW (402 hp), dung lượng pin: 87.7 kWh",
-      detailsLink: "/car/vf8",
-      buyLink: "/buy/vf8",
-      car: { MaXe: "VF 8", HinhAnh: vf8, KieuXe: "Điện", Gia: 600000000 }, // Thêm thông tin xe
-    },
-    {
-      image: vf9,
-      model: "VinFast VF 9",
-      range: "550 km (WLTP)",
-      seats: "7 chỗ ngồi",
-      description: "SUV điện cỡ lớn, công suất động cơ: 300 kW (402 hp), dung lượng pin: 123 kWh",
-      detailsLink: "/car/vf9",
-      buyLink: "/buy/vf9",
-      car: { MaXe: "VF 9", HinhAnh: vf9, KieuXe: "Điện", Gia: 700000000 }, // Thêm thông tin xe
-    },
-  ];
-
   const handleDetailsClick = (link) => {
     navigate(link);
   };
 
   const handleBuyClick = (car) => {
-    navigate(car.buyLink, { state: { car: car.car } });
+    navigate(car.buyLink, { state: { car } });
   };
 
   return (
@@ -119,12 +80,12 @@ const Slider2 = () => {
       <Slider {...settings}>
         {carInfo.map((car, index) => (
           <div className="slide-content" key={index}>
-            <img src={car.image} alt={car.model} />
+            <img src={car.HinhAnh} alt={car.MaXe} />
             <div className="slider-car-info">
-              <h2>{car.model}</h2>
-              <p><strong>Quãng đường:</strong> {car.range}</p>
-              <p><strong>Số chỗ ngồi:</strong> {car.seats}</p>
-              <p>{car.description}</p>
+              <h2>{car.MaXe}</h2>
+              <p><strong>Quãng đường:</strong> {car.TamDiChuyen} km</p>
+              <p><strong>Số chỗ ngồi:</strong> {car.SoGhe}</p>
+              <p><strong>Giá:</strong> {car.Gia.toLocaleString()} VND</p>
               <button className="details-button" onClick={() => handleDetailsClick(car.detailsLink)}>Xem Chi Tiết</button>
               <button className="buy-button" onClick={() => handleBuyClick(car)}>Mua xe</button>
             </div>

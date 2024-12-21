@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-
-import carData from '../components/Compares/CarData';
+import React, { useState, useEffect } from 'react';
 import '../styles/VF9Detail.css'; // Import tệp CSS riêng cho VF9
 import Menu from "../components/Menus/Menu";
 import VF9Image1 from '../assets/VF9-page1.png'; // Import ảnh từ src/assets
@@ -10,10 +8,23 @@ import Footer from "../components/Footers/Footer";
 import VF9Video from "../assets/VF9_Lifestyle.mp4";
 
 const VF9Details = () => {
-    const car = carData.find(car => car.MaXe === 'VF 9');
+    const [car, setCar] = useState(null);
+
     useEffect(() => {
+        fetch('http://localhost:3000/cars')
+            .then(response => response.json())
+            .then(data => {
+                const vf9Car = data.find(car => car.MaXe === 'VF 9');
+                setCar(vf9Car);
+            })
+            .catch(error => console.error('Error:', error));
         window.scrollTo(0, 0);
     }, []);
+
+    if (!car) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="vf9-container">
             <Menu /> {/* Thêm Menu */}
@@ -41,8 +52,7 @@ const VF9Details = () => {
             </div>
             <div className="vf9-video">
                 <h1>VinFast VF9 - Công nghệ Cho cuộc sống.</h1>
-                <p>Hợp tác cùng những đối tác hàng đầu trên toàn cầu, VinFast áp dụng những công nghệ hiện đại với thiết kế tập trung vào con người, đem lại trải nghiệm.
-                    Trợ lý ảo cùng loạt Dịch vụ thông minh tiên tiến, đồng hành cùng bạn hướng tới tương lai tốt đẹp hơn.</p>
+                <p>Hợp tác cùng những đối tác hàng đầu trên toàn cầu, VinFast áp dụng những công nghệ hiện đại với thiết kế tập trung vào con người, đem lại trải nghiệm. Trợ lý ảo cùng loạt Dịch vụ thông minh tiên tiến, đồng hành cùng bạn hướng tới tương lai tốt đẹp hơn.</p>
                 <video controls>
                     <source src={VF9Video} type="video/mp4" />
                     Trình duyệt của bạn không hỗ trợ video tag.
@@ -70,14 +80,12 @@ const VF9Details = () => {
                     <img src={VF9Image3} alt="VinFast VF 9" className="vf9-detailed-info-image" />
                 </div>
             </div>
-
             <div className="vf9-interior-images">
                 <h2>VinFast VF9 - Điểm nhấn trong mọi không gian.</h2>
                 <p>Không gian nội thất rộng rãi, sang trọng của VF9 mang lại sự thoải mái tối đa cho mọi hành khách. Các tiện nghi cao cấp và hệ thống giải trí hiện đại giúp bạn tận hưởng từng khoảnh khắc trên mọi cung đường, biến mỗi chuyến đi thành một trải nghiệm đẳng cấp.</p>
                 <img src={VF9Noithat} alt="Nội thất VinFast VF9" />
             </div>
             <Footer />
-
         </div>
     );
 };

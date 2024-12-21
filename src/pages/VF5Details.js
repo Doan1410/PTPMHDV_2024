@@ -1,18 +1,32 @@
-import React, { useEffect } from 'react';
-
-import carData from '../components/Compares/CarData';
-import Menu from "../components/Menus/Menu";
-import '../styles/VF5Detail.css';
+import React, { useState, useEffect } from 'react';
+import '../styles/VF5Detail.css'; // Import tệp CSS riêng cho VF5
 import VF5Image from '../assets/vf-5.png'; // Import ảnh từ src/assets
 import VF5Noithat from '../assets/vf5-noithat.png'; // Import ảnh từ src/assets
 import Footer from "../components/Footers/Footer";
+import Menu from "../components/Menus/Menu";
 
 const VF5Details = () => {
-    const car = carData.find(car => car.MaXe === 'VF 5');
+    const [car, setCar] = useState(null);
 
     useEffect(() => {
-            window.scrollTo(0, 0);
-        }, []);
+        // Fetch dữ liệu từ JSON Server
+        fetch('http://localhost:3000/cars')
+            .then(response => response.json())
+            .then(data => {
+                // Tìm xe có mã xe là 'VF 5'
+                const vf5Car = data.find(car => car.MaXe === 'VF 5');
+                setCar(vf5Car);
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Cuộn trang lên đầu khi thành phần được tải
+        window.scrollTo(0, 0);
+    }, []);
+
+    if (!car) {
+        // Hiển thị trạng thái loading khi dữ liệu chưa được tải xong
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="vf5-container">
@@ -41,8 +55,7 @@ const VF5Details = () => {
                 </ul>
             </div>
             <div className="vf5-video">
-                <h1>Xứng danh “đàn anh”
-                Xanh Sành hợp ví</h1>
+                <h1>Xứng danh “đàn anh” Xanh Sành hợp ví</h1>
                 <p>VF 5 Plus sở hữu thiết kế hiện đại, trẻ trung, cá tính và nổi bật với các lựa chọn phối màu nội ngoại thất, đảm bảo cá nhân hóa theo phong cách sống, cá tính và sở thích của mỗi khách hàng.</p>
                 <video controls>
                     <source src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw58161b6b/reserves/VF5/intro-vf5.09092024.webm" />
@@ -68,11 +81,9 @@ const VF5Details = () => {
             <div className="vf5-interior-images">
                 <h2>Nội thất tinh tế</h2>
                 <p>Không gian rộng rãi, phối màu sành điệu, cuốn hút với các đường viền bắt mắt.</p>
-
-                <img src={VF5Noithat} alt={car.MaXe} />
+                <img src={VF5Noithat} alt="Nội thất VF 5" />
             </div>
             <Footer />
-
         </div>
     );
 };

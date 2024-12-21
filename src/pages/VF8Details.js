@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-
-import carData from '../components/Compares/CarData';
+import React, { useState, useEffect } from 'react';
 import '../styles/VF8Detail.css'; // Import tệp CSS riêng cho VF8
 import Menu from "../components/Menus/Menu";
 import VF8Image1 from '../assets/VF8-page1.png'; // Import ảnh từ src/assets
@@ -12,10 +10,23 @@ import VF8Safety2 from '../assets/VF8-safety1.png'; // Import ảnh từ src/ass
 import Footer from "../components/Footers/Footer";
 
 const VF8Details = () => {
-    const car = carData.find(car => car.MaXe === 'VF 8');
+    const [car, setCar] = useState(null);
+
     useEffect(() => {
+        fetch('http://localhost:3000/cars')
+            .then(response => response.json())
+            .then(data => {
+                const vf8Car = data.find(car => car.MaXe === 'VF 8');
+                setCar(vf8Car);
+            })
+            .catch(error => console.error('Error:', error));
         window.scrollTo(0, 0);
     }, []);
+
+    if (!car) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="vf8-container">
             <Menu /> {/* Thêm Menu */}
@@ -88,7 +99,6 @@ const VF8Details = () => {
                 <img src={VF8Noithat} alt="Nội thất VinFast VF8" />
             </div>
             <Footer />
-
         </div>
     );
 };

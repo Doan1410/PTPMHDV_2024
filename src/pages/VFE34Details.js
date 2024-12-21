@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-
-import carData from '../components/Compares/CarData';
+import React, { useState, useEffect } from 'react';
 import '../styles/VFE34Detail.css'; // Import tệp CSS riêng cho VFE34
 import Menu from "../components/Menus/Menu";
 import VFE34Noithat from '../assets/VFE34-noithat.png'; // Đảm bảo bạn có ảnh tương ứng cho VFE34
@@ -10,10 +8,23 @@ import VFE34Image4 from '../assets/VFE34-page5.png'; // Đảm bảo bạn có �
 import VFE34Image2 from '../assets/VFE34-page2.png'; // Đảm bảo bạn có ảnh tương ứng cho VFE34
 
 const VFE34Details = () => {
-    const car = carData.find(car => car.MaXe === 'VF e34');
+    const [car, setCar] = useState(null);
+
     useEffect(() => {
+        fetch('http://localhost:3000/cars')
+            .then(response => response.json())
+            .then(data => {
+                const vfe34Car = data.find(car => car.MaXe === 'VF e34');
+                setCar(vfe34Car);
+            })
+            .catch(error => console.error('Error:', error));
         window.scrollTo(0, 0);
     }, []);
+
+    if (!car) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="vfe34-container">
             <Menu /> {/* Thêm Menu */}

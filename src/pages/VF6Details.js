@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-
-import carData from '../components/Compares/CarData';
+import React, { useState, useEffect } from 'react';
 import Menu from "../components/Menus/Menu";
 import '../styles/VF6Detail.css';
 import VF6Image from '../assets/vf-6.png'; // Import ảnh từ src/assets
@@ -11,11 +9,23 @@ import Footer from "../components/Footers/Footer";
 
 
 const VF6Details = () => {
-    const car = carData.find(car => car.MaXe === 'VF 6');
+    const [car, setCar] = useState(null);
 
     useEffect(() => {
-            window.scrollTo(0, 0);
-        }, []);
+        fetch('http://localhost:3000/cars')
+            .then(response => response.json())
+            .then(data => {
+                const vf6Car = data.find(car => car.MaXe === 'VF 6');
+                setCar(vf6Car);
+            })
+            .catch(error => console.error('Error:', error));
+        window.scrollTo(0, 0);
+    }, []);
+
+    if (!car) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="vf6-container">
             <Menu /> {/* Thêm Menu */}
@@ -46,7 +56,6 @@ const VF6Details = () => {
                 </h1>
                 <p>Với thiết kế tối giản, nhỏ gọn, cá tính và năng động, VinFast VF 3 sẽ luôn cùng bạn hoà nhịp với xu thế công nghệ di chuyển xanh toàn cầu, trải nghiệm giá trị trên mỗi hành trình, và tự do thể hiện phong cách sống.</p>
                 <img src={VF6Image1} alt="VinFast VF 6" className="vf6-description-image" />
-
             </div>
             <div className="vf6-description">
                 <h1>VinFast VF6 - Sức mạnh và phong cách.</h1>
@@ -72,11 +81,9 @@ const VF6Details = () => {
             <div className="vf6-interior-images">
                 <h2>VinFast VF6 - Định nghĩa mới của sự sang trọng và tiện nghi.</h2>
                 <p>Với nội thất sang trọng và không gian rộng rãi, VF6 mang lại sự thoải mái và tiện nghi tối đa cho người lái và hành khách. Hệ thống giải trí cao cấp và công nghệ kết nối hiện đại biến mỗi chuyến đi thành một trải nghiệm thú vị.</p>
-
-                <img src={VF6Noithat} alt="Noi that xê " />
+                <img src={VF6Noithat} alt="Nội thất VF 6" />
             </div>
             <Footer />
-
         </div>
     );
 };

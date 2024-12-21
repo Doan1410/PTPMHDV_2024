@@ -1,20 +1,34 @@
-import React, { useEffect } from 'react';
-import carData from '../components/Compares/CarData';
+import React, { useState, useEffect } from 'react';
 import '../styles/VF3Details.css'; // Import tệp CSS riêng cho VF3
-
 import VF3Image from '../assets/VF3-page-3.png'; // Import ảnh từ src/assets
 import VF3Image1 from '../assets/VF3-page-4.png'; // Import ảnh từ src/assets
 import VF3Video from "../assets/TVC_VF3_Online_1080.mp4";
 import VF3Noithat from '../assets/VF3-noithat.png'; // Import ảnh từ src/assets
 import Footer from "../components/Footers/Footer";
 import Menu from "../components/Menus/Menu";
-const VF3Details = () => {
-    const car = carData.find(car => car.MaXe === 'VF 3');
 
-    // Sử dụng useEffect để cuộn trang lên đầu khi thành phần được tải
+const VF3Details = () => {
+    const [car, setCar] = useState(null);
+
     useEffect(() => {
+        // Fetch dữ liệu từ JSON Server
+        fetch('http://localhost:3000/cars')
+            .then(response => response.json())
+            .then(data => {
+                // Tìm xe có mã xe là 'VF 3'
+                const vf3Car = data.find(car => car.MaXe === 'VF 3');
+                setCar(vf3Car);
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Cuộn trang lên đầu khi thành phần được tải
         window.scrollTo(0, 0);
     }, []);
+
+    if (!car) {
+        // Hiển thị trạng thái loading khi dữ liệu chưa được tải xong
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="vf3-container">
@@ -40,6 +54,7 @@ const VF3Details = () => {
                     </li>
                 </ul>
             </div>
+
             <div className="vf3-video">
                 <h1>VinFast VF 3 - Xe nhỏ, giá trị lớn.</h1>
                 <p>Với thiết kế tối giản, nhỏ gọn, cá tính và năng động, VinFast VF 3 sẽ luôn cùng bạn hoà nhịp với xu thế công nghệ di chuyển xanh toàn cầu, trải nghiệm giá trị trên mỗi hành trình, và tự do thể hiện phong cách sống.</p>
@@ -71,7 +86,7 @@ const VF3Details = () => {
             </div>
             <div className="vf3-interior-images">
                 <h2>VinFast VF 3 - Luôn đủ chỗ cho mọi người!</h2>
-                <img src={VF3Noithat} alt="Noi that xê "/>
+                <img src={VF3Noithat} alt="Noi that xe" />
             </div>
             <Footer />
         </div>
